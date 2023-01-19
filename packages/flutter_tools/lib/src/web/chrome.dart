@@ -193,13 +193,17 @@ class ChromiumLauncher {
       _restoreUserSessionInformation(cacheDir, userDataDir);
     }
 
+    // const int port = 55555;
     final int port = debugPort ?? await _operatingSystemUtils.findFreePort();
+    // _logger.printStatus('test debug port 1 chrome.dart : $port (Mathias :D )', emphasis: true);
+
     final List<String> args = <String>[
       chromeExecutable,
       // Using a tmp directory ensures that a new instance of chrome launches
       // allowing for the remote debug port to be enabled.
       '--user-data-dir=${userDataDir.path}',
       '--remote-debugging-port=$port',
+      // '--remote-debugging-port=$port',
       // When the DevTools has focus we don't want to slow down the application.
       '--disable-background-timer-throttling',
       // Since we are using a temp profile, disable features that slow the
@@ -222,6 +226,8 @@ class ChromiumLauncher {
       url,
     ];
 
+    // _logger.printStatus('test debug port 2 chrome.dart : $port (Mathias :D )', emphasis: true);
+
     final Process? process = await _spawnChromiumProcess(args, chromeExecutable);
 
     // When the process exits, copy the user settings back to the provided data-dir.
@@ -230,6 +236,9 @@ class ChromiumLauncher {
         _cacheUserSessionInformation(userDataDir, cacheDir);
       }));
     }
+    
+    // _logger.printStatus('test debug port 3 chrome.dart : $port (Mathias :D )', emphasis: true);
+    
     return connect(Chromium(
       port,
       ChromeConnection('localhost', port),
@@ -237,6 +246,8 @@ class ChromiumLauncher {
       process: process,
       chromiumLauncher: this,
     ), skipCheck);
+
+
   }
 
   Future<Process?> _spawnChromiumProcess(List<String> args, String chromeExecutable) async {

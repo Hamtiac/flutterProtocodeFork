@@ -32,6 +32,7 @@ import 'compile.dart';
 import 'convert.dart';
 import 'devfs.dart';
 import 'device.dart';
+import 'devtools_launcher.dart';
 import 'features.dart';
 import 'globals.dart' as globals;
 import 'project.dart';
@@ -235,6 +236,7 @@ class FlutterDevice {
     subscription = observatoryUris!.listen((Uri? observatoryUri) async {
       // FYI, this message is used as a sentinel in tests.
       globals.printTrace('Connecting to service protocol: $observatoryUri');
+      print("uri ? $observatoryUri");
       isWaitingForVm = true;
       bool existingDds = false;
       FlutterVmService? service;
@@ -1431,6 +1433,8 @@ abstract class ResidentRunner extends ResidentHandlers {
         globals.printStatus(
           'An Observatory debugger and profiler on ${device.device!.name} is available at: '
           '${device.vmService!.httpAddress}',
+          // 'An Observatory debugger and profiler on ${device.device!.name} is available at: '
+          // '${device.vmService!.httpAddress}',
         );
       }
       if (includeDevtools) {

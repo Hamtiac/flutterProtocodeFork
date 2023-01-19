@@ -692,6 +692,8 @@ class WebDevFS implements DevFS {
             ? await (_cachedExtensionFuture ??=
                 dwds.extensionDebugConnections.stream.first)
             : await dwds.debugConnection(appConnection);
+        // print("test devfs web ------------------------------------> port : ${debugConnection.port}");
+        // print("test devfs web ------------------------------------> uri : ${debugConnection.uri}");
         if (firstConnection.isCompleted) {
           appConnection.runMain();
         } else {
@@ -760,8 +762,10 @@ class WebDevFS implements DevFS {
     }
     if (hostname == 'any') {
       _baseUri = Uri.http('localhost:$selectedPort', webAssetServer.basePath!);
+      // _baseUri = Uri.https('localhost:$selectedPort', webAssetServer.basePath!);
     } else {
       _baseUri = Uri.http('$hostname:$selectedPort', webAssetServer.basePath!);
+      // _baseUri = Uri.https('$hostname:$selectedPort', webAssetServer.basePath!);
     }
     return _baseUri!;
   }

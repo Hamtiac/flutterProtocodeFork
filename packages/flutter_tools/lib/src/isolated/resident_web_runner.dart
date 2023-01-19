@@ -162,7 +162,9 @@ class ResidentWebRunner extends ResidentRunner {
     }
     final vmservice.VmService? service =_connectionResult?.vmService;
     final Uri websocketUri = Uri.parse(_connectionResult!.debugConnection!.uri);
+    // print("test -------------------> : ${_connectionResult!.debugConnection!.uri}");
     final Uri httpUri = _httpUriFromWebsocketUri(websocketUri);
+    // print("test -------------------> http uri ?: ${httpUri}");
     return _instance ??= FlutterVmService(service!, wsAddress: websocketUri, httpAddress: httpUri);
   }
   FlutterVmService? _instance;
@@ -574,7 +576,10 @@ class ResidentWebRunner extends ResidentRunner {
       );
 
 
-      websocketUri = Uri.parse(_connectionResult!.debugConnection!.uri);
+      websocketUri = Uri.parse(_connectionResult!.debugConnection!.uri); 
+      // _logger!.printStatus("l'uri mathias :D raw : ${_connectionResult!.debugConnection!.uri}");
+      // _logger!.printStatus("l'uri mathias :D WS uri: $websocketUri");
+      
       device!.vmService = _vmService;
 
       // Run main immediately if the app is not started paused or if there

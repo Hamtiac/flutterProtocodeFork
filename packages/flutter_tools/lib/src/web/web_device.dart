@@ -141,7 +141,9 @@ abstract class ChromiumDevice extends Device {
       url = platformArgs['uri']! as String;
     }
     final bool launchChrome = platformArgs['no-launch-chrome'] != true;
+
     if (launchChrome) {
+      // _logger.printStatus('test debug port 1 in web_device : ${debuggingOptions.webBrowserDebugPort} (Mathias :D )', emphasis: true);
       _chrome = await chromeLauncher.launch(
         url,
         cacheDir: _fileSystem.currentDirectory
@@ -151,7 +153,9 @@ abstract class ChromiumDevice extends Device {
         debugPort: debuggingOptions.webBrowserDebugPort,
         webBrowserFlags: debuggingOptions.webBrowserFlags,
       );
+      // _logger.printStatus('test debug port 2 in web_device : ${debuggingOptions.webBrowserDebugPort} (Mathias :D )', emphasis: true);
     }
+      // _logger.printStatus('test jveux check url in web_device : $url (Mathias :D )', emphasis: true);
     _logger.sendEvent('app.webLaunchUrl', <String, Object>{'url': url, 'launched': launchChrome});
     return LaunchResult.succeeded(observatoryUri: url != null ? Uri.parse(url): null);
   }
