@@ -1,7 +1,0 @@
-.dart_tool/
-.packages
-.pub/
-build/
-doc/api/
-example/issue_*
-example/local.dart

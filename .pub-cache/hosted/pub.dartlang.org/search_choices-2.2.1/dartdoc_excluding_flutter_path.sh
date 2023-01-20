@@ -1,1 +1,0 @@
-dartdoc --exclude ~/progs/flutter/

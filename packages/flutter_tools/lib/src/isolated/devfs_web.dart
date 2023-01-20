@@ -692,8 +692,8 @@ class WebDevFS implements DevFS {
             ? await (_cachedExtensionFuture ??=
                 dwds.extensionDebugConnections.stream.first)
             : await dwds.debugConnection(appConnection);
-        // print("test devfs web ------------------------------------> port : ${debugConnection.port}");
-        // print("test devfs web ------------------------------------> uri : ${debugConnection.uri}");
+        print("test devfs web ------------------------------------> port : ${debugConnection.port}");
+        print("test devfs web ------------------------------------> uri : ${debugConnection.uri}");
         if (firstConnection.isCompleted) {
           appConnection.runMain();
         } else {
