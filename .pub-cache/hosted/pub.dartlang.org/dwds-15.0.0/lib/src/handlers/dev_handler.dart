@@ -451,6 +451,7 @@ class DevHandler {
     _subs.add(_injected.devHandlerPaths.listen((devHandlerPath) async {
       final uri = Uri.parse(devHandlerPath);
       if (!_sseHandlers.containsKey(uri.path)) {
+        print("dev handler path ? : $devHandlerPath");
         final handler = _useSseForInjectedClient
             ? SseSocketHandler(
                 // We provide an essentially indefinite keep alive duration because
