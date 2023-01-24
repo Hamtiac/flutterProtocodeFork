@@ -70,7 +70,7 @@ Future<int> findUnusedPort() async {
   print("(Mathias :D findUnusedPort() ) -> socket address isMulticast shared : ${socket.address.isMulticast}");
   print("(Mathias :D findUnusedPort() ) -> socket address rawAddress shared : ${socket.address.rawAddress}");
   print("(Mathias :D findUnusedPort() ) -> socket port shared : ${port}");
-  print("--------------------------------------------------------------------------------------------------------")
+  print("--------------------------------------------------------------------------------------------------------");
   print("(Mathias :D findUnusedPort() ) -> socketTest address shared : ${socketTest.address}");
   print("(Mathias :D findUnusedPort() ) -> socketTest address tostring shared : ${socketTest.address.toString()}");
   print("(Mathias :D findUnusedPort() ) -> socketTest address host shared : ${socketTest.address.host}");
