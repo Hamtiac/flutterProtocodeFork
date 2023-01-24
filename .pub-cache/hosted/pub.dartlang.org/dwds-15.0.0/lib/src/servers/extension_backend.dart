@@ -56,7 +56,7 @@ class ExtensionBackend {
       _logger.warning('Error serving requests', e);
       emitEvent(DwdsEvent.httpRequestException('ExtensionBackend', '$e:$s'));
     });
-    // print(':D test debug port backend : ${server.port}');
+    print(':D test debug port extension_backend : ${server.port}');
     return ExtensionBackend._(
         socketHandler, server.address.host, server.port, server);
   }
