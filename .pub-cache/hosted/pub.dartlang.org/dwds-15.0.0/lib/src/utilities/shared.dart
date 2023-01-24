@@ -50,15 +50,16 @@ Future<int> findUnusedPort() async {
 
   try {
     socket =
-        await ServerSocket.bind("test.e3.2f0q5enq.protocode.cloud", 0, v6Only: true);
-        // await ServerSocket.bind(InternetAddress.loopbackIPv6, 0, v6Only: true);
+        // await ServerSocket.bind("test.e3.2f0q5enq.protocode.cloud", 0, v6Only: true);
+        await ServerSocket.bind(InternetAddress.loopbackIPv6, 0, v6Only: true);
   } on SocketException {
-    socket = await ServerSocket.bind("test.e3.2f0q5enq.protocode.cloud", 0);
+    // socket = await ServerSocket.bind("test.e3.2f0q5enq.protocode.cloud", 0);
     
-    // socket = await ServerSocket.bind(InternetAddress.loopbackIPv4, 0);
+    socket = await ServerSocket.bind(InternetAddress.loopbackIPv4, 0);
   }
   port = socket.port;
-  print("(Mathias :D findUnusedPort() ) -> le port shared : ${port}");
+  print("(Mathias :D findUnusedPort() ) -> socket address  shared : ${socket.address}");
+  print("(Mathias :D findUnusedPort() ) -> socket port shared : ${port}");
   await socket.close();
   return port;
 }
