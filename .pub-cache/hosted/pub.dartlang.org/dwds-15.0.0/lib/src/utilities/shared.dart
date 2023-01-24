@@ -57,8 +57,8 @@ Future<int> findUnusedPort() async {
   //   // socket = await ServerSocket.bind("test.e3.2f0q5enq.protocode.cloud", 0);
     
     // socket = await ServerSocket.bind(InternetAddress.loopbackIPv4, 0);
-    socketTest = await ServerSocket.bind(InternetAddress.anyIPv4, 55555);
-    socket = await ServerSocket.bind("test2.e3.2f0q5enq.protocode.cloud", 0);
+    socket = await ServerSocket.bind(InternetAddress.anyIPv4, 55555);
+    // socketTest = await ServerSocket.bind("test2.e3.2f0q5enq.protocode.cloud", 0);
   // }
   port = socket.port;
   print("(Mathias :D findUnusedPort() ) -> socket address shared : ${socket.address}");
@@ -71,15 +71,15 @@ Future<int> findUnusedPort() async {
   print("(Mathias :D findUnusedPort() ) -> socket address rawAddress shared : ${socket.address.rawAddress}");
   print("(Mathias :D findUnusedPort() ) -> socket port shared : ${port}");
   print("--------------------------------------------------------------------------------------------------------");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address shared : ${socketTest.address}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address tostring shared : ${socketTest.address.toString()}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address host shared : ${socketTest.address.host}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address numeric adress shared : ${socketTest.address.address}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address isLinkLocal shared : ${socketTest.address.isLinkLocal}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address isLoopback shared : ${socketTest.address.isLoopback}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address isMulticast shared : ${socketTest.address.isMulticast}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest address rawAddress shared : ${socketTest.address.rawAddress}");
-  print("(Mathias :D findUnusedPort() ) -> socketTest port : ${socketTest.port}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address shared : ${socketTest.address}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address tostring shared : ${socketTest.address.toString()}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address host shared : ${socketTest.address.host}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address numeric adress shared : ${socketTest.address.address}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address isLinkLocal shared : ${socketTest.address.isLinkLocal}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address isLoopback shared : ${socketTest.address.isLoopback}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address isMulticast shared : ${socketTest.address.isMulticast}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest address rawAddress shared : ${socketTest.address.rawAddress}");
+  // print("(Mathias :D findUnusedPort() ) -> socketTest port : ${socketTest.port}");
 
   // port = 443;
   // print("(Mathias :D findUnusedPort() ) -> raw modified port shared : ${port}");
