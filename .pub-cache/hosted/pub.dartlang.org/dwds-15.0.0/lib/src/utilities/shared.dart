@@ -41,19 +41,19 @@ Future<bool> useIPv6ForHost(String hostname) async {
 Future<int> findUnusedPort() async {
   int port;
   ServerSocket socket;
-  
+  print('hello');
+  // faux, marche pas...
   InternetAddress customipv6;
-  InternetAddress.lookup("test.e3.2f0q5enq.protocode.cloud", type: InternetAddressType.IPv6).then((value) => customipv6 = value[0]);
+  await InternetAddress.lookup("test.e3.2f0q5enq.protocode.cloud", type: InternetAddressType.IPv6).then((value) => customipv6 = value[0]);
   InternetAddress customipv4;
-  InternetAddress.lookup("test.e3.2f0q5enq.protocode.cloud", type: InternetAddressType.IPv4).then((value) => customipv4 = value[0]);
+  await InternetAddress.lookup("test.e3.2f0q5enq.protocode.cloud", type: InternetAddressType.IPv4).then((value) => customipv4 = value[0]);
 
   try {
     socket =
-        await ServerSocket.bind(customipv6, 0, v6Only: true);
+        await ServerSocket.bind("test.e3.2f0q5enq.protocode.cloud", 0, v6Only: true);
         // await ServerSocket.bind(InternetAddress.loopbackIPv6, 0, v6Only: true);
   } on SocketException {
-    socket = await ServerSocket.bind(customipv4, 0);
-;
+    socket = await ServerSocket.bind("test.e3.2f0q5enq.protocode.cloud", 0);
     
     // socket = await ServerSocket.bind(InternetAddress.loopbackIPv4, 0);
   }
