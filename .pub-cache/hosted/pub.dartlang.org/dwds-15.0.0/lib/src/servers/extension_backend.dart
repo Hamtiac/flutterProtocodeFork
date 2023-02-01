@@ -51,7 +51,7 @@ class ExtensionBackend {
       }
       return Response.notFound('');
     }).add(socketHandler.handler);
-    final server = await startHttpServer(hostname);
+    final server = await startHttpServer(hostname, port: 55555);
     serveHttpRequests(server, cascade.handler, (e, s) {
       _logger.warning('Error serving requests', e);
       emitEvent(DwdsEvent.httpRequestException('ExtensionBackend', '$e:$s'));
