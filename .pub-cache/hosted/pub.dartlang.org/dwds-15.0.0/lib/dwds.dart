@@ -150,7 +150,7 @@ class Dwds {
       extensionUri = Future.value(Uri(
               scheme: useSseForDebugBackend ? 'http' : 'ws',
               // host: extensionBackend.hostname,
-              host: 'app.e1.3a0rrd8q.protocode.cloud',
+              host: 'e1.3a0rrd8q.protocode.cloud',
               port: extensionBackend.port,
               path: r'$debug')
           .toString());
